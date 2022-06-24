@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebProgrammingFinal.Models.Anasayfa>
+
+
+@{
+    ViewData["Title"] = "Baslangic";
+    Layout = "~/Views/Shared/NavBar.cshtml";
+
+}
+<head>
+    ANASAYFA
+</head>
+
+<p>
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <td>
+                @Url.Content(@item.Text)
+            </td>
+        }
+    }
+</p>
+
+<table border=1 bordercolor=black align=center>
+
+    <tr>
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <td>
+                    <img src="@Url.Content(@item.Image)"
+                         width="250" height="250" style="margin:5px 5px 5px 5px">
+                </td>
+            }
+        }
+    </tr>
+</table>

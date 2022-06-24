@@ -1,0 +1,98 @@
+﻿@model WebProgrammingFinal.Models.Ulasim
+
+@{
+    ViewData["Title"] = "Gorusme";
+    Layout = "~/Views/Shared/NavBar.cshtml";
+    ViewBag.Title = "Detail";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            table th {
+                background-color: #B8DBFD;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            table, table table td {
+                border: 0px solid #ccc;
+            }
+
+        input[type=text], select {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("Gorusme", "Ulasim", FormMethod.Post))
+    {
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th colspan="2" align="center">Ulaşım</th>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Surname: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Surname)
+                </td>
+            </tr>
+
+            <tr>
+                <td>EMail: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.EMail)
+                </td>
+            </tr>
+
+            <tr>
+                <td>PhoneNumber: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PhoneNumber)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Message: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Message)
+                </td>
+            </tr>
+
+            <tr>
+                <input type="submit" value="Gönder" class="btn btn-default" />
+            </tr>
+        </table>
+    }
+
+
+</body>
+</html>
+

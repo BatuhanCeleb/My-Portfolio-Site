@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebProgrammingFinal.Models.Projelerim>
+
+
+@{
+    ViewData["Title"] = "Proje";
+    Layout = "~/Views/Shared/NavBar.cshtml";
+    ViewBag.Title = "Detail";
+
+}
+
+
+<div>Projelerim</div>
+
+
+
+@if (ViewBag.Message != null)
+{
+
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+
+
+<table class="table">
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectYear)
+                </td>
+
+            </tr>
+
+        }
+    
+
+    }
+    else
+    {
+    <td colspan="4" class="text-center"><b></b></td>
+
+    }
+</table>
+

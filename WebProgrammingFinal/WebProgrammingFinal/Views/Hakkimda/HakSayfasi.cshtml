@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebProgrammingFinal.Models.Hakkimda>
+@{
+    ViewData["Title"] = "HakSayfasi";
+    Layout = "~/Views/Shared/NavBar.cshtml";
+
+}
+
+@if (ViewBag.Message != null)
+{
+
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<p>
+    HAKKIMDA
+</p>
+
+
+
+<tr>
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <td>
+                @Url.Content(@item.Text)
+            </td>
+        }
+    }
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <iframe width="720" height="480"
+                    src="@Url.Content(item.Links)"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        }
+    }
+</tr>
